@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{
+                width:250px;
+                height:300px;
+                margin-left: 500px;
+                margin-top: 100px;
+                background-color: chocolate;
+                text-align: center;
+            }
+            td{
+                color:aliceblue;
+                align-items: center;
+            }
+            input{
+                width:200px;
+                height:50px;
+            }
+            .display{
+                height:60px;
+            }
+            button{
+                
+                align-items: center;
+                width:50px;
+                height:40px;
+                background-color: lime;
+            }
+              
+            
+        </style>
+        <script>
+              function clear(){
+                   document.getElementById("dis").value="";
+              }
+              function show(x){
+                document.getElementById("dis").value+=x;
+              }
+              function calc(){
+                var result=eval(document.getElementById("dis").value);
+                document.getElementById("dis").value=result;
+              }
+              function del(){
+                document.getElementById("dis").value=document.getElementById("dis").value.slice(0,-1);        
+              }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr class="display">
+                <td colspan="3"><input type="text" id="dis"/></td><td><button onclick="clear()">AC</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="show('1')">1</button></td><td><button onclick="show('2')">2</button></td><td><button onclick="show('3')">3</button></td><td><button onclick="show('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="show('4')">4</button></td><td><button onclick="show('5')">5</button></td><td><button onclick="show('6')">6</button></td><td><button onclick="show('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="show('7')">7</button></td><td><button onclick="show('8')">8</button></td><td><button onclick="show('9')">9</button></td><td><button onclick="show('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="show('00')">00</button></td><td><button onclick="show('0')">0</button></td><td><button onclick="show('.')">.</button></td><td><button onclick="del()">DEL</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="show('%')">%</button></td><td><button onclick="show('/')">/</button></td><td><button onclick="show('**')">**</button></td><td><button onclick="calc()">=</button></td>
+            </tr>
+        </table>
+    </body>
+</html>

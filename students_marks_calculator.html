@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #fid{
+                width: 400px;
+                background-color: aquamarine;
+                margin-left: 200px;
+                margin-top: 50px;
+               }
+              button{
+                 background-color: chartreuse;
+                 border:groove;
+
+              }             
+        </style>
+        <script>
+            function calc(){
+            var m=+(document.getElementById("m1").value); 
+            var p=+(document.getElementById("p1").value);
+            var c=+(document.getElementById("c1").value);
+            var avg1=(m+p+c)/3;
+            var ttl1=m+p+c;
+        
+               document.getElementById("avg").innerHTML="<span>Average</span>"+"="+avg1;
+                document.getElementById("ttl").innerHTML="<span>Total</span>"+"="+ttl1;
+        //    document.write("average"+""+avg1);
+        //     document.write("total"+""+ttl1);
+            }
+        </script>
+
+    </head>
+    <body>
+        <fieldset id="fid">
+        <form onsubmit="return false">
+            <label>Maths:</label>
+            <input type="text" id="m1"/><br><br>
+            <label>Physics:</label>
+            <input type="text" id="p1"/><br><br>
+            <label>Computer science:</label>
+            <input type="text" id="c1"/><br><br>
+
+            <button onclick="calc()" >Submit</button><br><br>
+             
+            <label id="avg"></label><br>
+            <label id="ttl"></label>
+            <!-- <label>Average:</label>
+            <input type="text" id="avg"/><br><br>
+            <label>Total:</label>
+            <input type="text" id="ttl"/><br> -->
+        </form>
+    </fieldset>
+    </body>
+</html>
